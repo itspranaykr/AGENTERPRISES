@@ -1,0 +1,82 @@
+/* Solar HD Image & UI Enhancements */
+
+.solar-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.solar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(249,115,22,0.3), rgba(251,191,36,0.2));
+  z-index: 1;
+}
+
+.hero-panel {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background: url('https://images.pexels.com/photos/2026382/pexels-photo-2026382.jpeg?w=400') no-repeat center/cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.project-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(249,115,22,0.4);
+}
+
+.service-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  filter: brightness(1.1);
+}
+
+.solar-flare {
+  filter: drop-shadow(0 0 20px rgba(249,115,22,0.6));
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+  border-radius: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-thumb { height: 180px; }
+  .service-img { height: 200px; }
+  .hero-panel { width: 150px; height: 225px; }
+}
+
+/* Parallax */
+.image-parallax {
+  transition: transform 0.5s ease;
+}
+
+.image-parallax:hover {
+  transform: translateY(-10px);
+}
